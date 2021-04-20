@@ -10,5 +10,16 @@ chronos.use({
     type: 'MongoDB',
     URI: process.env.CHRONOS_URI,
   },
-  notifications: [],
+  notifications: [
+    {
+      type: 'email',
+      settings: {
+        emails: 'nachiketpingle@gmail.com',
+        emailHost: 'smpt@gmail.com',
+        emailPort: 465,
+        user: process.env.SENDER_EMAIL,
+        password: process.env.SENDER_PASSWORD
+      }
+    }
+  ],
 });
